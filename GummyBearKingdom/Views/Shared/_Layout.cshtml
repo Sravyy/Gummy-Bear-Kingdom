@@ -1,5 +1,4 @@
-@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -16,7 +15,39 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
-    @Html.Raw(JavaScriptSnippet.FullScript)
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("http://industrystandarddesign.com/wp-content/uploads/2015/04/how-to-make-a-gummy-bear-chandelier.jpg");
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        a {
+            color: #42f4f1;
+            font-weight: bold;
+        }
+
+        h2{
+            color: white;
+        }
+
+        footer{
+            text-align: center;
+            color: white;
+        }
+
+        img {
+            border-radius: 7px;
+            width: 250px;
+            height: 210px;
+        }
+
+        nav div ul li a{
+            float: right;
+        }
+       
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -28,12 +59,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">GummyBearKingdom</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Gummy Bear Kingdom</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Products" asp-action="Index">Products</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 </ul>
             </div>

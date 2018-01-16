@@ -1,0 +1,37 @@
+﻿﻿@model GummyBearKingdom.Models.Review
+
+
+@{
+    ViewData["Title"] = "Review Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .create {
+        color: white;
+        font-size: 17px;
+    }
+
+    select {
+        color: black;
+        margin-left: 10px;
+    }
+
+    input {
+        margin-left: 10px;
+        color: black;
+    }
+</style>
+
+<div class="create">
+    <h2>Product Details</h2>
+    <hr />
+
+    <p>@Html.DisplayNameFor(model => model.Author): @Html.DisplayFor(model => model.Author)</p>
+    
+    <p>@Html.DisplayNameFor(model => model.Content_Body) : @Html.DisplayFor(model => model.Content_Body)</p>
+    
+    <p>@Html.DisplayNameFor(model => model.Rating) : @Html.DisplayFor(model => model.Rating)</p>
+    <br />
+    <p>@Html.ActionLink("Edit", "Edit", new { id = Model.ReviewId }) | @Html.ActionLink("Back to List", "Index")</p>
+</div>

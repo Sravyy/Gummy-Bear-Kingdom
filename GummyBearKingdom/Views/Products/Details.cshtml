@@ -1,0 +1,38 @@
+﻿﻿@model GummyBearKingdom.Models.Product
+
+
+@{
+    ViewData["Title"] = "Product Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .create {
+        color: white;
+        font-size: 17px;
+    }
+
+    select {
+        color: black;
+        margin-left: 10px;
+    }
+
+    input {
+        margin-left: 10px;
+        color: black;
+       
+    }
+</style>
+
+<div class="create">
+    <h2>Product Details</h2>
+    <hr />
+
+    <p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
+    
+    <p>@Html.DisplayNameFor(model => model.Description) : @Html.DisplayFor(model => model.Description)</p>
+   
+    <p>@Html.DisplayNameFor(model => model.Cost) : $ @Html.DisplayFor(model => model.Cost)</p>
+    <br />
+    <p>@Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) | @Html.ActionLink("Back to List", "Index")</p>
+</div>
