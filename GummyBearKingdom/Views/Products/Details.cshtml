@@ -35,4 +35,22 @@
     <p>@Html.DisplayNameFor(model => model.Cost) : $ @Html.DisplayFor(model => model.Cost)</p>
     <br />
     <p>@Html.ActionLink("Edit", "Edit", new { id = Model.ProductId }) | @Html.ActionLink("Back to List", "Index")</p>
+    <br />
+    <h3>Avg Rating: @Model.GetAvgRating() </h3>
+
+    <h2>Product Reviews</h2>
+    <hr />
+    
+    @foreach(var productReview in @Model.Reviews)
+    {   
+        <p>Author:<b>@productReview.Author</b> ,
+           Review:<b>@productReview.Content_Body</b>,
+           Rating: <b>@productReview.Rating</b>
+
+            @Html.ActionLink("Edit", "Edit", "Review", new { id = productReview.ReviewId }) |
+            @Html.ActionLink("Delete", "Delete", "Review", new { id = productReview.ReviewId })</p> 
+      
+
+
+    }
 </div>
