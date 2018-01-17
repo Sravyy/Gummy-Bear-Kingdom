@@ -11,17 +11,41 @@
                 height: 150px;
                 text-indent: -9999px; /* hides the link text */
             }
+            a{
+                font-size: 17px;
+            }
+
+            h3{
+                color: white;
+                font-size: 14px;
+            }
         </style>
     </head>
     <body>
         <h2>Gummy Bear Kingdom</h2>
-        <%= @Html.ActionLink("Gummy Bear Products", "Index", "Products", new { @class = "classname" }) %>
-        
-        <img src="https://media.giphy.com/media/1sEonL5e2UCxa/giphy.gif" alt="Gummy Bears" >
-      
-        <br />
-        <br />
-        <%= @Html.ActionLink("View Product Reviews", "Index", "Reviews") %>
-        <img src="http://content.presentermedia.com/files/animsp/00012000/12483/woman_checks_it_off_her_list_md_wm.gif" alt="Gummy Bears" />
+        <div class="col-md-12">
+            <div class="col-md-6">
+                
+                <%= @Html.ActionLink("Gummy Bear Products", "Index", "Products", new { @class = "classname" }) %>
+
+                <img src="https://media.giphy.com/media/1sEonL5e2UCxa/giphy.gif" alt="Gummy Bears">
+            </div>
+            <div class="col-md-6">
+                <%= @Html.ActionLink("View Product Reviews", "Index", "Reviews") %>
+                <img src="http://content.presentermedia.com/files/animsp/00012000/12483/woman_checks_it_off_her_list_md_wm.gif" alt="Gummy Bears" />
+            </div>
+        </div>
+        <h2>Featured Products this Weeks</h2>
+        <div class="row">
+           
+            @foreach (var product in Model)
+            {
+            <div class="col-md-3">
+                <h2><a href="@Url.Action("Products", "Product", new { id = product.ProductId })">@product.Name</a></h2>
+                <h3>Cost: $ @product.Cost</h3>
+                <h3>Description: @product.Description</h3>
+            </div>
+            }
+        </div>
     </body>
 </html>

@@ -15,7 +15,7 @@ namespace GummyBearKingdom.Tests.ControllerTests
     {
 
         Mock<IReviewRepository> mock = new Mock<IReviewRepository>();
-        EFReviewRepository db = new EFReviewRepository(new GummyBearKingdomDbContext());
+        EFReviewRepository db = new EFReviewRepository(new TestDbContext());
 
         private void DbSetup()
         {
@@ -77,7 +77,7 @@ namespace GummyBearKingdom.Tests.ControllerTests
         }
 
         [TestMethod]
-        public void Mock_PostViewResultCreate_ViewResult()
+        public void Db_PostViewResultCreate_ViewResult()
         {
             // Arrange
             Review testReview = new Review
@@ -101,6 +101,7 @@ namespace GummyBearKingdom.Tests.ControllerTests
 
         }
         
+
 
     }
 }
